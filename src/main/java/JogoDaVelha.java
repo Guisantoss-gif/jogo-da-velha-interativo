@@ -7,7 +7,7 @@ class JogoDaVelha {
     private Jogador jogador2;
     private Tabuleiro tabuleiro;
 
-    public JogoDaVelha(Jogador jogador1, Jogador jogador2, Tabuleiro tabuleiro) {
+    private JogoDaVelha(Jogador jogador1, Jogador jogador2, Tabuleiro tabuleiro) {
         this.jogador1 = jogador1;
         this.jogador2 = jogador2;
         this.tabuleiro = tabuleiro;
@@ -58,7 +58,7 @@ class JogoDaVelha {
         System.out.println("Criado por Guilherme Oliveira Santos");
     }
 
-    public static void main(String[] args) {
+    private static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Escolha seu símbolo X ou O: ");
