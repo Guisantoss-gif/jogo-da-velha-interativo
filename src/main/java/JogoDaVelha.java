@@ -19,7 +19,6 @@ class JogoDaVelha {
         Random random = new Random();
 
         int linha, coluna;
-        
         int partida = 1;
 
         while (!this.tabuleiro.acabouOJogo()) {
@@ -33,7 +32,7 @@ class JogoDaVelha {
                 coluna = sc.nextInt();
             } while (!this.tabuleiro.jogar(this.jogador1.getSimbolo(), linha, coluna));
 
-            if (tabuleiro.acabouOJogo()) {
+            if (this.tabuleiro.acabouOJogo()) {
                 break;
             }
 
@@ -57,24 +56,22 @@ class JogoDaVelha {
         }
 
         System.out.println("Criado por Guilherme Oliveira Santos");
-    };
+    }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        Jogador jogador1, jogador2;
 
         System.out.print("Escolha seu símbolo X ou O: ");
         char simbolo = sc.next().toUpperCase().charAt(0);
 
         char simbolo2 = (simbolo == 'X') ? 'O' : 'X';
 
-        jogador1 = new Jogador(simbolo);
-        jogador2 = new Jogador(simbolo2);
+        Jogador jogador1 = new Jogador(simbolo);
+        Jogador jogador2 = new Jogador(simbolo2);
 
         Tabuleiro tabuleiro = new Tabuleiro();
+
         JogoDaVelha jogo = new JogoDaVelha(jogador1, jogador2, tabuleiro);
         jogo.iniciar();
-
     }
 }
